@@ -1,15 +1,50 @@
-![Programação-Java_ Persistencia de datos y consultas con Spring Data JPA](https://github.com/genesysR-dev/2066-java-persitencia-de-datos-y-consultas-con-Spring-JPA/assets/91544872/e0e3a9f8-afc7-4e7b-be83-469351ef2d70)
+# Screenmatch - Aplicación de Búsqueda y Gestión de Series
 
-# ScreenMatch
+Este proyecto Java es una aplicación de consola basada en Spring Boot que permite buscar, guardar y consultar información sobre series utilizando la API pública de [OMDb](https://www.omdbapi.com/). Está orientada al aprendizaje de Java, Spring Data JPA y consumo de APIs REST.
 
-Proyecto desarrollado durante el segundo curso de la formación Avanzando con Java de Alura
+## 📌 Características principales
 
-## 🔨 Objetivos del proyecto
+- Consumo de datos desde la API de OMDb.
+- Conversión de datos JSON a objetos Java.
+- Persistencia de series y episodios en base de datos mediante Spring Data JPA.
+- Interfaz de usuario por consola con múltiples opciones de búsqueda y filtrado.
+- Integración con `SerieRepository` para manejo de entidades y consultas personalizadas.
 
-* Avanzar en el proyecto Screenmatch, iniciado en el primer curso de la formación, creando un menú con varias opciones;
-* Modelar las abstracciones de la aplicación a través de clases, enums, atributos y métodos;
-* Consumir la API del ChatGPT(Opcional;
-* Utilizar Spring Data JPA para persistir datos en la base de datos;
-* Conocer varios tipos de bases de datos y utilizar PostgreSQL;
-* Trabajar con varios tipos de consultas a la base de datos;
-* Profundizar en la interfaz JPA Repository.
+## 🧱 Estructura del proyecto
+
+- `Principal.java`: clase principal con el menú interactivo.
+- `Serie`, `Episodio`, `DatosSerie`, `DatosTemporadas`: modelos de datos.
+- `SerieRepository`: interfaz JPA para la gestión de datos persistentes.
+- `ConsumoAPI`: clase encargada de consumir datos desde OMDb API.
+- `ConvierteDatos`: clase que convierte respuestas JSON en objetos Java.
+
+## 🖥️ Menú de opciones
+
+| Opción | Funcionalidad |
+|--------|---------------|
+| `1` | Buscar y guardar una serie desde la web (OMDb API) |
+| `2` | Buscar episodios de una serie guardada |
+| `3` | Mostrar todas las series almacenadas |
+| `4` | Buscar una serie por título |
+| `5` | Mostrar el Top 5 de mejores series según evaluación |
+| `6` | Buscar series por género/categoría |
+| `7` | Filtrar series por cantidad de temporadas y evaluación mínima |
+| `8` | Buscar episodios por nombre |
+| `9` | Mostrar Top 5 episodios de una serie específica |
+| `0` | Salir del programa |
+
+## 📦 Requisitos previos
+
+- Java 17 o superior
+- Spring Boot 3.2+
+- PostgreSQL o cualquier base de datos compatible configurada en `application.properties`
+- OMDb API Key (ya incluida en el código)
+
+## 🧪 Ejecución del proyecto
+
+1. Clona o descarga el repositorio.
+2. Configura tu conexión a base de datos en `application.properties`.
+3. Ejecuta la aplicación desde tu IDE o desde terminal con:
+
+```bash
+./mvnw spring-boot:run
