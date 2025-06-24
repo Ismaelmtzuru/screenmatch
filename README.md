@@ -1,50 +1,69 @@
-# Screenmatch - Aplicación de Búsqueda y Gestión de Series
+# 🎬 Screenmatch - Series Search and Management Application
 
-Este proyecto Java es una aplicación de consola basada en Spring Boot que permite buscar, guardar y consultar información sobre series utilizando la API pública de [OMDb](https://www.omdbapi.com/). Está orientada al aprendizaje de Java, Spring Data JPA y consumo de APIs REST.
+This project combines a **Java Spring Boot** backend and a **web frontend using HTML/JavaScript**, allowing users to search, save, and view series information via the public **OMDb API**. It is designed for learning Java, Spring Data JPA, REST API consumption, and modular frontend development.
 
-## 📌 Características principales
+---
 
-- Consumo de datos desde la API de OMDb.
-- Conversión de datos JSON a objetos Java.
-- Persistencia de series y episodios en base de datos mediante Spring Data JPA.
-- Interfaz de usuario por consola con múltiples opciones de búsqueda y filtrado.
-- Integración con `SerieRepository` para manejo de entidades y consultas personalizadas.
+## 📌 Key Features (Java Backend)
 
-## 🧱 Estructura del proyecto
+- Data consumption from the OMDb API.
+- Conversion of JSON data to Java objects.
+- Persistence of series and episodes using Spring Data JPA.
+- Console-based user interface with multiple search and filtering options.
+- Integration with `SerieRepository` for entity handling and custom queries.
 
-- `Principal.java`: clase principal con el menú interactivo.
-- `Serie`, `Episodio`, `DatosSerie`, `DatosTemporadas`: modelos de datos.
-- `SerieRepository`: interfaz JPA para la gestión de datos persistentes.
-- `ConsumoAPI`: clase encargada de consumir datos desde OMDb API.
-- `ConvierteDatos`: clase que convierte respuestas JSON en objetos Java.
+---
 
-## 🖥️ Menú de opciones
+## 🧱 Project Structure (Java)
 
-| Opción | Funcionalidad |
-|--------|---------------|
-| `1` | Buscar y guardar una serie desde la web (OMDb API) |
-| `2` | Buscar episodios de una serie guardada |
-| `3` | Mostrar todas las series almacenadas |
-| `4` | Buscar una serie por título |
-| `5` | Mostrar el Top 5 de mejores series según evaluación |
-| `6` | Buscar series por género/categoría |
-| `7` | Filtrar series por cantidad de temporadas y evaluación mínima |
-| `8` | Buscar episodios por nombre |
-| `9` | Mostrar Top 5 episodios de una serie específica |
-| `0` | Salir del programa |
+| File/Class           | Description                                                  |
+|----------------------|--------------------------------------------------------------|
+| `Principal.java`     | Main class with the interactive menu.                        |
+| `Serie`, `Episodio`, `DatosSerie`, `DatosTemporadas` | Data models.                           |
+| `SerieRepository`    | JPA interface for persistent data management.                |
+| `ConsumoAPI`         | Class responsible for consuming data from the OMDb API.      |
+| `ConvierteDatos`     | Class to convert JSON responses into Java objects.           |
 
-## 📦 Requisitos previos
+---
 
-- Java 17 o superior
-- Spring Boot 3.2+
-- PostgreSQL o cualquier base de datos compatible configurada en `application.properties`
-- OMDb API Key (ya incluida en el código)
+## 🖥️ Console Menu Options
 
-## 🧪 Ejecución del proyecto
+| Option | Functionality                                                                |
+|--------|------------------------------------------------------------------------------|
+| 1      | Search and save a series from the web (OMDb API)                            |
+| 2      | Search for episodes of a saved series                                       |
+| 3      | Display all stored series                                                   |
+| 4      | Search for a series by title                                                |
+| 5      | Show the Top 5 best-rated series                                            |
+| 6      | Search for series by genre/category                                         |
+| 7      | Filter series by number of seasons and minimum rating                       |
+| 8      | Search episodes by name                                                     |
+| 9      | Show Top 5 episodes of a specific series                                    |
+| 0      | Exit the program                                                            |
 
-1. Clona o descarga el repositorio.
-2. Configura tu conexión a base de datos en `application.properties`.
-3. Ejecuta la aplicación desde tu IDE o desde terminal con:
+---
+
+## 📦 Prerequisites
+
+- Java 17 or higher  
+- Spring Boot 3.2+  
+- PostgreSQL (or any compatible DB configured in `application.properties`)  
+- OMDb API Key (already included in the code)
+
+---
+
+## 🧪 How to Run
 
 ```bash
+# Clone or download the repository
+# Configure your DB connection in application.properties
 ./mvnw spring-boot:run
+```
+
+## 🌐 Web Interface - Frontend HTML/JS
+- The project also includes a web frontend that allows users to:
+- View new releases and Top 5 series
+- Filter series by category (Action, Drama, Comedy, etc.)
+- Navigate to series detail pages and view seasons/episodes
+- Interact with data served by the backend
+

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonAlias;
 import jakarta.persistence.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalDouble;
 @Entity
 @Table(name = "series")
@@ -118,4 +119,8 @@ public class Serie {
         episodios.forEach(e-> e.setSerie(this));
         this.episodios = episodios;
     }
+    public List<Episodio> getEpisodios() {
+        return episodios;
+    }
+
 }
